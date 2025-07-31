@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": { "type": "integer" },
+    "name": { "type": "string" },
+    "email": { "type": "string" },
+    "gender": { "type": "string", "enum": ["male", "female"] },
+    "status": { "ty{\n  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"id\": { \"type\": \"integer\" },\n    \"name\": { \"type\": \"string\" },\n    \"email\": { \"type\": \"string\" },\n    \"gender\": { \"type\": \"string\", \"enum\": [\"male\", \"female\"] },\n    \"status\": { \"type\": \"string\", \"enum\": [\"active\", \"inactive\"] }\n  },\n  \"required\": [\"id\", \"name\", \"email\", \"gender\", \"status\"]\n}pe": "string", "enum": ["active", "inactive"] }
+  },
+  "required": ["id", "name", "email", "gender", "status"]
+}

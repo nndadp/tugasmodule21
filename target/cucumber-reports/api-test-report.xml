@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="23.824" tests="6" skipped="0" failures="0" errors="0" timestamp="2025-07-31T03:12:25.453317300Z">
+<testcase classname="Test Automation Rest Api dan Web UI" name="Test get list data normal" time="5.883">
+<system-out><![CDATA[
+Given prepare url valid for "GET_LIST_USERS"................................passed
+And hit api get list users..................................................passed
+Then validation status code is equals 200...................................passed
+Then validation response body get list users................................passed
+Then validation response json with JSONSchema "get_list_users_normal.json"..passed
+]]></system-out>
+</testcase>
+<testcase classname="Test Automation Rest Api dan Web UI" name="Test create new user normal" time="1.786">
+<system-out><![CDATA[
+Given prepare url valid for "CREATE_NEW_USERS"..............................passed
+And hit api post create new user............................................passed
+Then validation status code is equals 201...................................passed
+Then validation response body create new user...............................passed
+Then validation response json with JSONSchema "create_users_normal.json"....passed
+]]></system-out>
+</testcase>
+<testcase classname="Test Automation Rest Api dan Web UI" name="Test delete user normal" time="2.403">
+<system-out><![CDATA[
+Given prepare url valid for "GET_LIST_USERS"................................passed
+And hit api get list users..................................................passed
+And validation response body get list users.................................passed
+Given prepare url valid for "DELETE_USERS"..................................passed
+And hit api delete..........................................................passed
+Then validation status code is equals 204...................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Test Automation Rest Api dan Web UI" name="Login with valid username and password" time="6.954">
+<system-out><![CDATA[
+Given user is on login page.................................................passed
+When user input username with "standard_user"...............................passed
+And user input password with "secret_sauce".................................passed
+And user click login button.................................................passed
+Then user will redirect to homepage.........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Test Automation Rest Api dan Web UI" name="Login with invalid username and password" time="3.2">
+<system-out><![CDATA[
+Given user is on login page.................................................passed
+When user input username with "user_lain"...................................passed
+And user input password with "coba_coba"....................................passed
+And user click login button.................................................passed
+Then A message appears "Username and password do not match any user in this service".passed
+]]></system-out>
+</testcase>
+<testcase classname="Test Automation Rest Api dan Web UI" name="Login with empty password" time="3.348">
+<system-out><![CDATA[
+Given user is on login page.................................................passed
+When user input username with "standard_user"...............................passed
+And user input password with "".............................................passed
+And user click login button.................................................passed
+Then A message appears "Password is required"...............................passed
+]]></system-out>
+</testcase>
+</testsuite>
