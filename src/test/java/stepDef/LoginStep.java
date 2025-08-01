@@ -24,7 +24,7 @@ public class LoginStep {
 
     @Before
     public void beforeTest() {
-        ChromeOptions options = new ChromeOptions(); //untuk headless atau tanpa eksekusi website
+        ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
@@ -48,20 +48,17 @@ public class LoginStep {
 
     @When("user input username with {string}")
     public void userInputUsernameWith(String username) {
-        By usernameInputText = By.cssSelector("input#user-name.form_input");
-        driver.findElement(usernameInputText).sendKeys(username);
+        loginPage.inputUsername(username);
     }
 
     @And("user input password with {string}")
     public void userInputPasswordWith(String password) {
-        By passwordInputText = By.xpath("//*[@id=\"password\"]");
-        driver.findElement(passwordInputText).sendKeys(password);
+        loginPage.inputPassword(password);
     }
 
     @And("user click login button")
     public void userClickLoginButton() {
-        By loginButton = By.id("login-button");
-        driver.findElement(loginButton).click();
+        loginPage.clickLoginButton();
     }
 
     @Then("user will redirect to homepage")
